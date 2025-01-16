@@ -6,7 +6,7 @@ use MVC\Router;
 use Model\Propiedad;
 
 
-class PropiedadController {
+class AdminController {
 
 
     public static function index(Router $router) {

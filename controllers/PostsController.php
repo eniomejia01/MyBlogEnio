@@ -5,7 +5,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Propiedad;
 
-class ProductosController{
+class PostsController{
     
     public static function index ( Router $router ) {
 

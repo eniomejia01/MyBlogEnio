@@ -1,6 +1,6 @@
-<main class="contenedor seccion">
+<main class="contenedorCrear seccion">
 
-    <h1>Actualizar Producto</h1>
+    <h1>Actualizar Post</h1>
 
     <?php foreach($errores  as $error): ?>
         <div class="alerta  error">
@@ -13,7 +13,7 @@
     <form action="" class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
         
-        <input type="submit" value="Actualizar Propiedad" class="boton boton-verde">
+        <input type="submit" value="Actualizar Post" class="boton boton-verde">
     </form>
 
 </main>

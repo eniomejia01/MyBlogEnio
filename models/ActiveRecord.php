@@ -168,7 +168,7 @@ class ActiveRecord {
 
     // Lista todas los registros
     public static function  all() {
-        $query = "SELECT * FROM " . static::$tabla;   
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC";   
         
         $resultado = self::consultarSQL($query);
 

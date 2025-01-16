@@ -36,11 +36,7 @@ $auth = $_SESSION['login_copy'] ?? null; //este codigo es para que no se caiga l
 
 <main class="contenedor seccion">
 
-    <div class="acciones">
-        <a href="/crear-cuenta">Crear una nueva cuenta de vendedor</a>
-    </div>
-
-    <h1>Administrador de Store Spring</h1>
+    <h1>Administrador de Enio Blog</h1>
 
     <?php
     if ($resultado) {
@@ -52,9 +48,9 @@ $auth = $_SESSION['login_copy'] ?? null; //este codigo es para que no se caiga l
     }
     ?>
 
-    <a href="/propiedades/crear" class="boton boton-verde">Agregar Producto</a>
+    <a href="/propiedades/crear" class="boton boton-verde">Crear nuevo post</a>
 
-    <h2>Productos Estanteria 1</h2>
+    <h2>Posts</h2>
 
     <table class="propiedades">
         <thead>
@@ -71,17 +67,17 @@ $auth = $_SESSION['login_copy'] ?? null; //este codigo es para que no se caiga l
                 <tr>
                     <td> <?php echo $propiedad->titulo;  ?> </td>
                     <td> <?php echo $propiedad->fecha ?></td>
-                    <td>Q <?php echo $propiedad->comentario ?></td>
+                    <td> <?php echo $propiedad->comentario ?></td>
                     <td>
 
-                        <form method="POST" class="w-100" action="/propiedades/eliminar">
+                        <!-- <form method="POST" class="w-100" action="/propiedades/eliminar"> -->
 
 
-                            <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
+                            <!-- <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
                             <input type="hidden" name="tipo" value="propiedad">
                             <input type="submit" class="boton-rojo-eliminar" value="Eliminar">
 
-                        </form>
+                        </form> -->
                         <a href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-actualizar">Actualizar</a>
                     </td>
                 </tr>

@@ -33,7 +33,7 @@
     }
 
     textarea{
-        height: 5rem;
+        height: 50rem;
     }
 
     .forma-contacto{
@@ -47,4 +47,10 @@
         margin: 0;
         width: auto;
     }
+}
+
+.contenedorCrear{
+    margin: 0 auto;
+    max-width: 70rem;
+    width: 95%;
 }

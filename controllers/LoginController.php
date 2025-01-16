@@ -4,10 +4,8 @@ namespace Controllers;
 
 use Model\Admin;
 use MVC\Router;
-use Model\Propiedad;
 
-
-class PaginasController{
+class LoginController{
 
     public static function login_copy(Router $router)
     {
@@ -45,45 +43,9 @@ class PaginasController{
             }
         }
 
-        $router->render('auth/login_copy', [
+        $router->render('auth/anonaadmin', [
             'alertas' => $alertas,
             
         ]);
     }
-
-    public static function index( Router $router){
-        
-        $propiedades = Propiedad::get(3);
-        // $inicio = true;
-
-        $router -> render('/paginas/index', [
-            'propiedades' => $propiedades,
-            // 'inicio' => $inicio
-
-        ]);
-    }
-
-    public static function propiedades( Router $router){
-
-        $propiedades = Propiedad::all();
-
-        $router->render('paginas/propiedades', [
-            'propiedades' => $propiedades
-        ]);
-
-    }
-
-    public static function propiedad( Router $router){
-
-        $id = validarORedireccionar('/public/propiedades');
-
-        // buscar la propiedad por su id
-        $propiedad = Propiedad::find($id);
-
-        $router -> render('paginas/propiedad', [
-            'propiedad' => $propiedad
-        ]);
-    }
-
-
 }

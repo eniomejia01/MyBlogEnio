@@ -1,6 +1,6 @@
-<main class="contenedor seccion">
+<main class="contenedorCrear seccion">
 
-    <h1>Crear</h1>
+    <h1>Crear Post</h1>
 
     <?php foreach($errores  as $error): ?>
         <div class="alerta  error">
@@ -12,7 +12,7 @@
 
     <form action="" class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
-        <input type="submit" value="Agregar Producto" class="boton boton-verde">
+        <input type="submit" value="Agregar Post" class="boton boton-verde">
     </form>
 
 </main>

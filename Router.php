@@ -38,7 +38,7 @@ class Router
 
         // Proteger las rutas solo si el usuario no está autenticado
         if (in_array($urlActual, $rutas_protegidas) && !$auth) {
-            header('Location: /login_copy');
+            header('Location: /');
             exit;
         }
 
