@@ -3,7 +3,7 @@
     <p class="descripcion-pagina">Inicia sesión con tus datos admin</p>
 
     <?php 
-        include_once __DIR__ . "/../templates/alertas.php";
+        include_once __DIR__ . "/../templates/erroresLogin.php";
     ?>
 
     <form class="formulario" method="POST" action="/anonaadmin">

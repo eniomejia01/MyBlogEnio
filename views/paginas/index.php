@@ -5,7 +5,7 @@
 
         <p>Enio Blog</p>
     
-        <p>correo</p>
+        <!-- <p>correo</p> -->
 
     </div>
 

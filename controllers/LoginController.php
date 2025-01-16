@@ -9,17 +9,17 @@ class LoginController{
 
     public static function login_copy(Router $router)
     {
-        $alertas = [];
+        $errores = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $auth = new Admin($_POST);
-            $alertas = $auth->validar();
+            $errores = $auth->validar();
 
-            if (empty($alertas)) {
+            if (empty($errores)) {
                 $resultado = $auth->existeUsuario();
 
                 if (!$resultado) {
-                    $alertas = Admin::getErrores();
+                    $errores = Admin::getErrores();
                 } else {
                     // Verificar el password
                     $autenticado = $auth->comprobarPassword($resultado);
@@ -37,14 +37,14 @@ class LoginController{
                         header('Location: /admin');
                         exit;
                     } else {
-                        $alertas = Admin::getErrores();
+                        $errores = Admin::getErrores();
                     }
                 }
             }
         }
 
         $router->render('auth/anonaadmin', [
-            'alertas' => $alertas,
+            'errores' => $errores,
             
         ]);
     }
