@@ -14,11 +14,5 @@
         id="descripcion" 
         cols="30" rows="10"> <?php echo s($propiedad ->  comentario); ?></textarea>
         
-        <!-- <label for="precio">Precio:</label>
-        <input type="text" 
-                id="precio" 
-                name="propiedad[precio]" 
-                placeholder="Precio Producto" 
-                value="<?php echo s($propiedad -> precio); ?>" > -->
 
 </fieldset>

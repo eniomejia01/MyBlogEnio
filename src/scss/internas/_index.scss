@@ -56,8 +56,14 @@
     color: #302a2c;
     font-size: 19px;
     letter-spacing: 0.08em;
-    line-height: 2.0;
+    line-height: 1.5;
     outline: none;
+    white-space: pre-wrap;
+}
+
+.postSpace {
+    white-space: pre-wrap;
+
 }
 
 
