@@ -2,6 +2,8 @@
 
 
 namespace Controllers;
+
+use Middlewares\AuthMiddleware;
 use MVC\Router;
 use Model\Propiedad;
 
@@ -10,10 +12,11 @@ class AdminController {
 
 
     public static function index(Router $router) {
+
+        // Verificamos la autenticación antes de mostrar la vista
+        AuthMiddleware::verificarLogin();
         
         $propiedades = Propiedad::all();
-
-
             // Muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 

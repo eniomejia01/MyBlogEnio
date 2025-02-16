@@ -30,12 +30,12 @@ table.propiedades {
     width: 100%;
     border-spacing: 0;
     margin-bottom: 2rem;
-    border: 1px solid red($color: #000000);
 
 
     thead{
         background-color: $verde;
     }
+
 
     th{
         color: $blanco;
@@ -43,7 +43,8 @@ table.propiedades {
     }
 
     td{   
-        text-align: left;
+        text-align: center;
+        
         // border: 1px solid v.$gris;
 
     }
@@ -57,12 +58,24 @@ table.propiedades {
     tr:nth-child(odd):not(:first-child) {
         background-color: #ffffff; /* Color para filas impares */
     }
-  
-
 
     @include m.tablet{
         td{
-            text-align: left;
+            text-align: center;
         }
+    }
+}
+
+.tabla-admin td {
+    max-width: 100px;
+    /* Ajusta este valor según necesites */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: .5rem 0 .5rem 0;
+
+
+    @include m.tablet {
+        max-width: 300px;
     }
 }

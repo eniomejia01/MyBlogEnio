@@ -21,6 +21,8 @@
 
 .boton-amarillo-actualizar{
     @include boton-eliminar-actualizar($amarillo, block);
+    margin: 0;
+
 }
 
 .boton-rojo-eliminar{

@@ -11,7 +11,7 @@ class AuthMiddleware
             session_start();
         }
 
-        // Verificamos múltiples condiciones de seguridad
+        //Verificamos múltiples condiciones de seguridad
         $autenticado = isset($_SESSION['login_copy']) &&
             isset($_SESSION['admin']) &&
             isset($_SESSION['id']) &&

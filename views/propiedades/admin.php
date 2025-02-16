@@ -1,89 +1,81 @@
 <?php
 
-if (!isset($_SESSION)) { // si ya estaba arrancada la sesion, entonces no hecemos nada
-    session_start(); // si no esta iniciada la session, entonces la vamos a iniciar
+if (!isset($_SESSION)) {
+    session_start();
 }
-
-
-$auth = $_SESSION['login_copy'] ?? null; //este codigo es para que no se caiga la pagina si no hay una session iniciada
-
 
 ?>
 
-<header class="header <?php echo $inicio  ? 'inicio' : ''; ?>">
+<!DOCTYPE html>
+<html lang="es">
 
-    <div class="contenido-header contenedor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Enio Blog</title>
+</head>
 
-        <div class="barra">
+<body>
+    <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
+            <div class="barra">
+                <nav class="navegacion" role="navigation" aria-label="Navegación principal">
+                    <a href="/anonaadmin"
+                        class="boton-cerrar-sesion"
+                        title="Cerrar sesión actual">
+                        Cerrar Sesión
+                    </a>
 
-            <div class="nombre-usuario">
-                <p><?php echo $nombre ?? ''; ?></p>
+                </nav>
             </div>
+    </header>
 
-            <nav class="navegacion boton-cerrar-sesion">
+    <main class="contenedor seccion">
+        <h1>Administrador de Enio Blog</h1>
 
-                <?php if ($auth): ?>
-                    <a href="/">Cerrar Sesión</a>
-                <?php endif; ?>
+        <?php if (isset($resultado)): ?>
+            <?php $mensaje = mostrarNotificacion(intval($resultado)); ?>
+            <?php if ($mensaje): ?>
+                <p class="alerta exito"><?php echo s($mensaje) ?></p>
+            <?php endif; ?>
+        <?php endif; ?>
 
-            </nav>
-        </div>
+        <a href="/propiedades/crear" class="boton boton-verde">Crear nuevo post</a>
 
-    </div>
+        <h2>Posts</h2>
 
-</header>
+        <?php if (empty($propiedades)): ?>
+            <p class="no-resultados">No hay posts disponibles</p>
+        <?php else: ?>
+            <table class="propiedades tabla-admin" role="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Contenido</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <?php foreach ($propiedades as $propiedad): ?>
+                        <tr>
+                            <td><?php echo s($propiedad->titulo); ?></td>
+                            <td><?php echo s($propiedad->fecha); ?></td>
+                            <td><?php echo s($propiedad->comentario); ?></td>
+                            <td class="acciones">
+                                <a href="/propiedades/actualizar?id=<?php echo urlencode($propiedad->id); ?>"
+                                    class="boton-amarillo-actualizar"
+                                    title="Actualizar post">
+                                    Actualizar
+                                </a>
 
-<main class="contenedor seccion">
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </main>
+</body>
 
-    <h1>Administrador de Enio Blog</h1>
-
-    <?php
-    if ($resultado) {
-        $mensaje = mostrarNotificacion(intval($resultado));
-
-        if ($mensaje) { ?>
-            <p class="alerta exito"><?php echo s($mensaje) ?></p>
-    <?php }
-    }
-    ?>
-
-    <a href="/propiedades/crear" class="boton boton-verde">Crear nuevo post</a>
-
-    <h2>Posts</h2>
-
-    <table class="propiedades">
-        <thead>
-            <tr>
-                <th>Titulo</th>
-                <th>fecha</th>
-                <th>Contenido</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-
-        <tbody> <!--  Mostrar los Resultados -->
-            <?php foreach ($propiedades as $propiedad): ?>
-                <tr>
-                    <td> <?php echo $propiedad->titulo;  ?> </td>
-                    <td> <?php echo $propiedad->fecha ?></td>
-                    <td> <?php echo $propiedad->comentario ?></td>
-                    <td>
-
-                        <!-- <form method="POST" class="w-100" action="/propiedades/eliminar"> -->
-
-
-                            <!-- <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
-                            <input type="hidden" name="tipo" value="propiedad">
-                            <input type="submit" class="boton-rojo-eliminar" value="Eliminar">
-
-                        </form> -->
-                        <a href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-actualizar">Actualizar</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-
-    </table>
-
-</main>
+</html>

@@ -18,7 +18,8 @@
             "App\\": "./classes",
             "Model\\": "./models",
             "MVC\\" : "./",
-            "Controllers\\" : "./controllers"
+            "Controllers\\" : "./controllers",
+            "Middlewares\\": "./middlewares"
         }
     }
 }

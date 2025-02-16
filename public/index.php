@@ -23,7 +23,6 @@ $router->get('/', [PostsController::class, 'index']);
 // Zona Pública
 $router->get('/anonaadmin', [LoginController::class, 'login_copy']);
 $router->post('/anonaadmin', [LoginController::class, 'login_copy']);
-
 $router->get('/propiedades', [LoginController::class, 'propiedades']);
 $router->get('/propiedad', [LoginController::class, 'propiedad']);
 

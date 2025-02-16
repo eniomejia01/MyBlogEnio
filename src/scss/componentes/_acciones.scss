@@ -4,19 +4,23 @@
 
 .acciones {
 
-    margin-top: v.$separacion;
+    // margin-top: v.$separacion;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     @include m.tablet {
-        display: flex;
-        justify-content: center;
+        padding: 1rem;
+
     }
 
 
     a {
-
         color: $negro;
-        display: block;
-        margin-bottom: calc(v.$separacion / 2);
+        display: flex;
         text-align: center;
+        // margin-bottom: calc(v.$separacion / 2);
     }
 }
 
