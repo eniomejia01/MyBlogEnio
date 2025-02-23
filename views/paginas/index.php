@@ -3,7 +3,7 @@
 
     <div class="navbar">
 
-        <p>Enio Blog</p>
+        <p class="titleblog">Enio Blog</p>
     
         <!-- <p>correo</p> -->
 
@@ -31,6 +31,6 @@
 
 <footer class="footer seccion">
 
-    <p class="copyright">Enio Mejía
+    <p class="copyright">Enio Mejía todos los derechos reservados
         <?php echo date('Y') ?> &copy;</p>
 </footer>
