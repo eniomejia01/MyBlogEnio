@@ -1,16 +1,3 @@
-
-<div class="headerr">
-
-    <div class="navbar">
-
-        <p class="titleblog">Enio Blog</p>
-    
-        <!-- <p>correo</p> -->
-
-    </div>
-
-</div>
-
 <main class="contenedorPrincipal">
 
 
